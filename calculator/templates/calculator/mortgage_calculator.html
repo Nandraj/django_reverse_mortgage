@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reverse Mortgage Calculator</title>
+  </head>
+  <body>
+    <h1>Reverse Mortgage Calculator</h1>
+    <form method="post">
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit">Calculate</button>
+    </form>
+    {% if result is not None %}
+    <h2>Principal Limit: ${{ result }}</h2>
+    {% endif %}
+  </body>
+</html>
